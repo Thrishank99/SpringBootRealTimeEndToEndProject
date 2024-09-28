@@ -10,7 +10,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    bat 'docker build -t Thrishank99/springboot-realtime-endtoend-project .'
+                    bat 'docker build -t thrishank99/springboot-realtime-endtoend-project .'
                 }
             }
         
@@ -21,7 +21,7 @@ pipeline {
                   withCredentials([usernamePassword(credentialsId: 'srinudockerhub', passwordVariable: 'dockerhubnew', usernameVariable: 'thrishank99')]) {
                   bat "docker login -u ${env.thrishank99} -p ${env.dockerhubnew}"
 }
-                  bat 'docker push thrishank99/springboot-realtime-endtoend-project:latest'
+                  bat 'docker push thrishank99/springboot-realtime-endtoend-project'
                 }
             }
         }  
