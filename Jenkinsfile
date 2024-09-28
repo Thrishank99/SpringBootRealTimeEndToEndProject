@@ -15,14 +15,14 @@ pipeline {
             }
         
         }
-        stage('Push image to Hub'){
+       stage('Push image to Hub'){
             steps{
                 script{
-                  withCredentials([usernamePassword(credentialsId: 'srinudockerhub', passwordVariable: 'srinudockerhub', usernameVariable: 'srinudockerhub')]) {
-                  bat "docker login -u ${env.Thrishank99} -p ${env.Srinu@9676}"
+                  withCredentials([usernamePassword(credentialsId: 'srinudockerhub', passwordVariable: 'dockerhubnew', usernameVariable: 'thrishank99')]) {
+                  bat "docker login -u ${env.thrishank99} -p ${env.dockerhubnew}"
 
 }
-                  bat 'docker push Thrishank99/springboot-realtime-endtoend-project'
+                  bat 'docker push thrishank99/spring-app-development'
                 }
             }
         }  
