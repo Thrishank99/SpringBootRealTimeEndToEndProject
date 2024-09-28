@@ -19,7 +19,7 @@ pipeline {
             steps{
                 script{
                   withCredentials([usernamePassword(credentialsId: 'srinudockerhub', passwordVariable: 'srinudockerhub', usernameVariable: 'srinudockerhub')]) {
-                  bat "docker login -u ${env.Thrishank99} -p ${env.srinudockerhub}"
+                  bat "docker login -u ${env.Thrishank99} -p ${env.Srinu@9676}"
 
 }
                   bat 'docker push Thrishank99/springboot-realtime-endtoend-project'
