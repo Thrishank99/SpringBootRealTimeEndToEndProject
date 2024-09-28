@@ -18,8 +18,6 @@ public class SwaggerConfig {
 				.paths(PathSelectors.any()).build();
 	}
 	}
-
-
 /*
  * @Bean public Docket getDocket() { return new
  * Docket(DocumentationType.SWAGGER_2).groupName("public-apis").apiInfo(
