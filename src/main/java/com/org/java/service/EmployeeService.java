@@ -9,6 +9,7 @@ import java.util.Set;
 import org.springframework.stereotype.Service;
 
 import com.org.java.dto.EmployeeDto;
+import com.org.java.entity.Company;
 import com.org.java.entity.Employee;
 
 @Service
@@ -43,6 +44,8 @@ public interface EmployeeService {
 	double findByCountSalaryDeatails();
 
 	List<Employee> findParticularRecordsDeatails();
+	
+	List<Employee> findParticularRecordFileter();
 
 	Set<Employee> printDublicateRecordsDeatails();
 
@@ -53,6 +56,8 @@ public interface EmployeeService {
 	List<Employee> findParticularRecordsDscDeatails();
 
 	List<String> mapNamesDeatails();
+	
+	List<String> mapNamesToUppercaseDeatails();
 
 	Map<Character, Integer> findStringOccurenceDeatails();
 
@@ -111,5 +116,6 @@ public interface EmployeeService {
 	List<EmployeeDto> findByEmployeeBetweenSalaryDeatails();
 
 	Map<String, Long> findBygroupCountDeatails();
+
 
 }

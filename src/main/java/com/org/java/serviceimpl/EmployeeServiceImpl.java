@@ -21,6 +21,7 @@ import org.springframework.stereotype.Component;
 
 import com.org.java.controller.EmployeeController;
 import com.org.java.dto.EmployeeDto;
+import com.org.java.entity.Company;
 import com.org.java.entity.Employee;
 import com.org.java.exception.EmptyInputException;
 import com.org.java.exception.NoDataAvailableException;
@@ -576,4 +577,21 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return deptDeatils;
 		
 	}
+
+	@Override
+	public List<Employee> findParticularRecordFileter() {
+	List<Employee> list=employeeRepository.findAll();
+	List<Employee> particularDetails=list.stream().filter(s1->s1.getEmpId()>3).collect(Collectors.toList());
+		return particularDetails;
+	}
+
+	@Override
+	public List<String> mapNamesToUppercaseDeatails() {
+	List<Employee> list=employeeRepository.findAll();
+	List<String> Names=list.stream().map(s1->s1.getEmpName()).collect(Collectors.toList());
+	List<String> namesList=Names.stream().map(s1->s1.toUpperCase()).collect(Collectors.toList());
+		return namesList;
+	}
+
+
 }

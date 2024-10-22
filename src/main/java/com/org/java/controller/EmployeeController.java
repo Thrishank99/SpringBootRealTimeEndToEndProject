@@ -24,13 +24,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.org.java.dto.EmployeeDto;
+import com.org.java.entity.Company;
 import com.org.java.entity.Employee;
 import com.org.java.service.EmployeeService;
 
 @RestController
 @RequestMapping("/employee")
 @SuppressWarnings("unchecked")
-
 public class EmployeeController {
 	Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
@@ -185,6 +185,12 @@ public class EmployeeController {
 		List<Employee> emplist = employeeService.findParticularRecordsDeatails();
 		return new ResponseEntity(emplist, HttpStatus.OK);
 	}
+	
+	@GetMapping("/findParticularFilters")
+	public ResponseEntity<Employee> findParticularfilters() {
+		List<Employee> empFilterlist = employeeService.findParticularRecordFileter();
+		return new ResponseEntity(empFilterlist, HttpStatus.OK);
+	}
 
 	@GetMapping("/findParticularRecordsAsc")
 	public ResponseEntity<Employee> findParticularRecordsAsc() {
@@ -225,6 +231,11 @@ public class EmployeeController {
 	@GetMapping("/mapNames")
 	public ResponseEntity<Employee> mapNames() {
 		List<String> emplist = employeeService.mapNamesDeatails();
+		return new ResponseEntity(emplist, HttpStatus.OK);
+	}
+	@GetMapping("/mapNamesToUpperCase")
+	public ResponseEntity<Employee> mapNamesToUpperCase() {
+		List<String> emplist = employeeService.mapNamesToUppercaseDeatails();
 		return new ResponseEntity(emplist, HttpStatus.OK);
 	}
 
@@ -350,5 +361,4 @@ public class EmployeeController {
 		return new ResponseEntity<List<Employee>>(emplist, HttpStatus.OK);
 
 	}
-
 }
