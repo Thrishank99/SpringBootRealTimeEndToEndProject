@@ -8,6 +8,7 @@ public class SpringbootRealTimeEndToEndProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootRealTimeEndToEndProjectApplication.class, args);
+		System.out.println("hello");
 	}
 
 }
