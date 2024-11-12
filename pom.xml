@@ -98,7 +98,7 @@
 	</dependencies>
 
 	<build>
-	<finalName>springboot-docker-kubernates-pipeline-app</finalName>
+	<finalName>springboot-docker-kubernates-pipeline-application</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

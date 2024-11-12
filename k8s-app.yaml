@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: springboot-docker-kubernate
-          image: springboot-docker-kubernates-pipeline-app:1.0
+          image: springboot-docker-kubernates-pipeline-application:1.0
           ports:
             - containerPort: 8080
           env:   # Setting Enviornmental Variables
